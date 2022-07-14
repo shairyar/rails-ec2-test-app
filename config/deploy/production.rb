@@ -1,6 +1,11 @@
 set :branch, "main"
 server "63.33.201.157", user: "ubuntu", roles: %w[web app db]
 
+set :ssh_options, {
+  keys: %w(/Users/Shairyar/.ssh/id_ed25519.pub),
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
